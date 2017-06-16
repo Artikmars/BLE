@@ -1,34 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:clickable="true">
+
+
+    <TextView
+        android:id="@+id/tvTitleGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/provider_gps"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvEnabledGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleGPS"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvStatusGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEnabledGPS"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvLocationGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStatusGPS"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvTitleNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLocationGPS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/provider_network"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvEnabledNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleNet"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvStatusNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEnabledNet"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tvLocationNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStatusNet"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"/>
+
 
     <Button
         android:id="@+id/advertise_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/discover_btn"
+        android:layout_alignEnd="@+id/discover_btn"
+        android:layout_marginBottom="31dp"
         android:onClick="onClick"
-        android:text="Advertise"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/text"
-        android:layout_centerHorizontal="true" />
+        android:text="Advertise" />
 
     <TextView
-        android:id="@+id/text"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test"/>
+        android:layout_alignEnd="@+id/tvTitleGPS"
+        android:layout_alignStart="@+id/tvTitleGPS" />
 
     <Button
         android:id="@+id/discover_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="66dp"
         android:onClick="onClick"
-        android:text="Discover"
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/advertise_btn"
-        android:layout_alignStart="@+id/advertise_btn"
-        android:layout_alignEnd="@+id/advertise_btn" />
+        android:text="Discover" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/tvStatusGPS"
+        android:layout_alignParentEnd="true"
+        android:onClick="updateButtonsVisibility"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/refresh" />
+
+    <TextView
+        android:id="@+id/tvScanResultLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/advertise_btn"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp"
+        android:layout_marginStart="16dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvScanResultLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/advertise_btn"
+        android:layout_alignParentStart="true"
+        android:textSize="14sp" />
 </RelativeLayout>
